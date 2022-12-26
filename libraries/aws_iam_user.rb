@@ -65,13 +65,15 @@ class AwsIamUser < AwsResourceBase
     "AWS IAM User #{username}"
   end
 
-  private
+  
 
   def login_profile
     @login_profile ||= catch_aws_errors do
       iam_client.get_login_profile(user_params)
     end
   end
+  
+  private
 
   def policies
     @policies ||= catch_aws_errors do
