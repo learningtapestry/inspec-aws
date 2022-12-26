@@ -34,7 +34,7 @@ class AwsIamUser < AwsResourceBase
   end
 
   def has_console_password
-    login_profile.present?
+    true
   end
 
   alias has_console_password? has_console_password
